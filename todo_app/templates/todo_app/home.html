@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h2>Welcome {{ user.username }}</h2>
+
+  <h3>Your Tasks:</h3>
+  <ul>
+    {% for task in tasks %}
+      <li>{{ task.title }} - {{ task.description }}</li>
+    {% empty %}
+      <li>No tasks yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
